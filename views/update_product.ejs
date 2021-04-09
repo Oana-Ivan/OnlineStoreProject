@@ -1,0 +1,49 @@
+<!-- include header -->
+<%-include('include/_header')%>
+
+<main>
+    <div>
+        <i class="fas fa-angle-double-left"></i>
+        <a href="/">Products list</a>
+    </div>
+    
+    <h2>Update product</h2>
+    
+    <form id="update_product" method="POST">
+        <div class="new_product">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="hidden" name="id" value="<%=product._id%>">
+                <input type="text" name="name" value="<%=product.name%>" placeholder="The name of the product">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" name="description" value="<%=product.description%>" placeholder="The description of the product">
+            </div>
+    
+            <div class="form-group">
+                <label for="Price">Price</label>
+                <input type="number" id="price" name="price" min="1" max="5000" value="<%=product.price%>">
+            </div>
+            
+            <div class="form-group">
+                <label for="Quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="5000" value="<%=product.quantity%>">
+            </div>
+    
+            <div class="form-group">
+                <label for="Rating">Rating (between 1 and 5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" value="<%=product.rating%>">
+            </div>
+    
+            <div class="form-group">
+                <button type="submit">Save</button>
+            </div>
+    
+        </div>
+    </form>
+</main>
+
+<!-- include footer -->
+<%-include('include/_footer')%>
